@@ -1,19 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq8b4ylp583pr"]
+[gd_scene load_steps=8 format=3 uid="uid://dq8b4ylp583pr"]
 
 [ext_resource type="Texture2D" uid="uid://disyx8sdurv2j" path="res://priest1_v1_1.png" id="1_s24wo"]
+[ext_resource type="Script" path="res://new_script.gd" id="2_n4jav"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0y6iv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ug2s"]
+albedo_color = Color(0.215686, 0.576471, 0.0509804, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bmft0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eoh3x"]
+albedo_color = Color(1, 1, 0.0509804, 1)
+
+[sub_resource type="Environment" id="Environment_cxqjh"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.48012, 0, 0, 0, 1, 0, 0, 0, 5.83269, 0.00971985, 0, 0.022221)
 mesh = SubResource("PlaneMesh_0y6iv")
+surface_material_override/0 = SubResource("StandardMaterial3D_8ug2s")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18536, 3.14894)
+transform = Transform3D(1, 0.000639928, -8.66744e-05, -0.000464352, 0.805834, 0.592141, 0.000448772, -0.592141, 0.805835, 0, 2.81815, 3.38397)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(5.85, 0, 0, 0, 5.85, 0, 0, 0, 1, 0.948489, 0.866615, 1.11264)
+transform = Transform3D(3.24175, 0, 0, 0, 3.24175, 0, 0, 0, 1, 2.93533, 0.974096, 1.11264)
+billboard = 1
 texture_filter = 0
 texture = ExtResource("1_s24wo")
+script = ExtResource("2_n4jav")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.424799, 0, 0, 0, 0.424799, 0, 0, 0, 1, 0, 1.44529, 0)
+mesh = SubResource("CapsuleMesh_bmft0")
+surface_material_override/0 = SubResource("StandardMaterial3D_eoh3x")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cxqjh")
