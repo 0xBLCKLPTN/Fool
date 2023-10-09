@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq8b4ylp583pr"]
+
+[ext_resource type="Texture2D" uid="uid://disyx8sdurv2j" path="res://priest1_v1_1.png" id="1_s24wo"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0y6iv"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.48012, 0, 0, 0, 1, 0, 0, 0, 5.83269, 0.00971985, 0, 0.022221)
+mesh = SubResource("PlaneMesh_0y6iv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18536, 3.14894)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(5.85, 0, 0, 0, 5.85, 0, 0, 0, 1, 0.948489, 0.866615, 1.11264)
+texture_filter = 0
+texture = ExtResource("1_s24wo")
